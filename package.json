@@ -1,0 +1,6 @@
+{
+  "name": "mdo-pac",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=18" }
+}
