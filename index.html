@@ -364,7 +364,7 @@ async function loadProgress(hash) {
 }
 
 // ── Rendu des 4 cartes ────────────────────────────────────────────────────
-function renderBlocs(progress, prenom, nom, email) {
+function renderBlocs(progress, prenom, nom, email, campus) {
   const grid = document.getElementById('blocs-grid');
   grid.innerHTML = '';
   BLOCS.forEach(b => {
@@ -422,6 +422,7 @@ async function handleEnter() {
   btnEnter.textContent = 'Chargement…';
   btnEnter.disabled = true;
 
+  const campus   = document.getElementById('input-campus').value;
   const hash     = await hashEmail(email);
   const progress = await loadProgress(hash);
 
@@ -430,7 +431,7 @@ async function handleEnter() {
   portal.style.display = 'flex';
   document.getElementById('portal-welcome').textContent = `Bonjour, ${prenom} —`;
   document.getElementById('footer-student').textContent = email;
-  renderBlocs(progress, prenom, nom, email);
+  renderBlocs(progress, prenom, nom, email, campus);
 }
 
 btnEnter.addEventListener('click', handleEnter);
