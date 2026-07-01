@@ -376,7 +376,7 @@ function renderBlocs(progress, prenom, nom, email, campus) {
       card.addEventListener('click', () => {
         // Transmission ?p=Prénom&n=Nom&e=email → bypass NameScreen dans le PAC
         const params = new URLSearchParams({ p: prenom, n: nom, e: email, c: campus });
-        window.location.href = b.url + '?' + params.toString();
+        window.open(b.url + '?' + params.toString(), '_blank');
       });
     }
     card.innerHTML = `
